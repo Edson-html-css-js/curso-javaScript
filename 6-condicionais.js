@@ -7,24 +7,28 @@ const listaDeDestinos = new Array(
 );
 listaDeDestinos.push(`curitiba`, `bahia`);//adcionando um item na lista depois de ser criada
 
-const idadeComprador = 14;
-const estaAcompanhado = true;
+const idadeComprador = 18;
+const estaAcompanhado = false;
+const temPassagemComprada = false
 console.log("Destinos possiveis")
 console.log(listaDeDestinos);
 
-if(idadeComprador >= 18){
-    console.log("Você é maior você pode comprar apassagem!")
+if(idadeComprador >= 18 || estaAcompanhado){
+    console.log("Boa viagem!")
     listaDeDestinos.splice(1, 1)//splice é para apagar um item da lista, apartir da posição 1, apagar só um
+    console.log(listaDeDestinos)
 }else{
-    //a pessoa é menor de idade
-    if(estaAcompanhado){
-        console.log("Comprador está acompanhado pode comprar passagem")
-        listaDeDestinos.splice(1, 1)
-    }else{
         console.log("você é menor não pode comprar passagem!")
     }
    
-}
+
+    console.log("Embarque: \n\n")
+
+    if(idadeComprador >= 18 && temPassagemComprada){
+        console.log("Boa viagem")
+    }else{
+        console.log("Você não pode embarcar")
+    }
 
 
 
